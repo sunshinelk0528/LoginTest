@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">登陆小案例</string>
+    <string name="hint_name">请输入用户名</string>
+    <string name="hint_pass">请输入密码</string>
+    <string name="checkname">保存密码</string>
+    <string name="bt_name">登陆</string>
+</resources>
