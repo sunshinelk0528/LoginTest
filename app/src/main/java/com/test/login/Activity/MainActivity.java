@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.test.login.R;
 import com.test.login.Util.UserInforUtil;
 
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
@@ -34,6 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBt_login = (Button) findViewById(R.id.btlogin);
         mBt_login.setOnClickListener(this);
 
+        Map<String,String> map=UserInforUtil.getUserInfo();
+        if(map !=null){
+            String username=map.get("username");
+            String pass=map.get("password");
+            mEt_username.setText(username);
+            et_pass.setText(pass);
+        }
         
     }
 
@@ -60,8 +69,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }else {
                 Toast.makeText(mContext,"密码保存失败",Toast.LENGTH_SHORT).show();
             }
+        }else {
+
+            Toast.makeText(mContext,"无需保存",Toast.LENGTH_SHORT).show();
         }
-        // TODO: 2016/6/27  
-        
+
     }
 }
